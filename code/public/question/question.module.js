@@ -15,6 +15,7 @@ angular.module("question", []).component("question", {
                         var q = result.data.result;
                         q.readableTime = ucai.formatDate(new Date(q.time));
                         loadUserInfo(q);
+                        document.title = q.title;
                         $scope.question = q;
                         loadAnswers();
                         break;

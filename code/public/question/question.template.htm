@@ -7,8 +7,8 @@
     <div>{{question.content}}</div>
 </div>
 <div ng-if="answers">
-    <ol ng-repeat="answer in answers">
-        <li>
+    <ol>
+        <li ng-repeat="answer in answers">
             <div>
                 <span style="font-size: 12pt;font-weight: bold;">{{answer.userName}}</span>
                 <span style="font-style: italic;font-size: 10pt;">{{answer.readableTime}}</span>
@@ -16,6 +16,9 @@
             <div>{{answer.content}}</div>
         </li>
     </ol>
+</div>
+<div ng-if="!answers" style="font-size: 11pt;font-weight: bold;">
+    暂时没有人回答
 </div>
 <div>
     <div style="font-size: 14pt">我也来回答</div>

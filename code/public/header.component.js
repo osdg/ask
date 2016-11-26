@@ -12,7 +12,10 @@ angular.module("ask").component("ngHeader", {
 
             $http.post(ucai.ServerApis.config).then(function (result) {
                 if (result.data.code == 1) {
+                    ucai.siteInfo = result.data.result;
                     $scope.site_title = result.data.result.site_title;
+
+                    document.title = ucai.siteInfo.site_title;
                 }
             });
         }

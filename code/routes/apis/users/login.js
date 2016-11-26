@@ -11,9 +11,10 @@ const md5 = require("md5-js");
 const {cloneObject} = require("../../../source/functions");
 
 module.exports = function (router) {
-    router.post("/users/login", checkUserLoginNameInput);
-    router.post("/users/login", checkPasswordInput);
-    router.post('/users/login', function (req, res) {
+    router.post('/users/login', [
+        checkUserLoginNameInput,
+        checkPasswordInput
+    ], function (req, res) {
         req.models.Member.find({login: req.body.login}, function (err, result) {
             if (!err) {
                 if (result.length) {

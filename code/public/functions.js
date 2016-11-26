@@ -30,6 +30,14 @@ window.ucai = window.ucai || {};
             get: function () {
                 return ucai._currentUser;
             }
+        },
+        siteInfo:{
+            set:function (value) {
+                ucai._siteInfo = value;
+            },
+            get:function () {
+                return ucai._siteInfo;
+            }
         }
     });
 

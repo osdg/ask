@@ -5,6 +5,9 @@
 angular.module("ask").component("allQuestions", {
     templateUrl: "AllQuestions.template.htm",
     controller: function ($scope, $http, $routeParams) {
+
+        document.title = "问题列表";
+
         $http.post(ucai.ServerApis.questionList, {keyword: $routeParams.keyword}).then(function (result) {
             console.log(result);
             switch (result.data.code) {

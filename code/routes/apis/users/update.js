@@ -10,10 +10,11 @@ const {
 } = require("../precheck");
 
 module.exports = function (router) {
-    router.post("/users/update", checkUserIdInput);
-    router.post("/users/update", checkUserLoginNameInput);
-    router.post("/users/update", checkCurrentUser);
-    router.post("/users/update", function (req, res) {
+    router.post("/users/update", [
+        checkUserIdInput,
+        checkUserLoginNameInput,
+        checkCurrentUser
+    ], function (req, res) {
         req.models.Member.get(req.body.userid, function (err, user) {
             if (!err) {
                 user.login = req.body.login;

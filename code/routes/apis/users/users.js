@@ -28,9 +28,7 @@ module.exports = function (router) {
         }
     });
 
-    router.post('/users/register', checkUserLoginNameInput);
-    router.post('/users/register', checkPasswordInput);
-    router.post('/users/register', function (req, res) {
+    router.post('/users/register', [checkUserLoginNameInput, checkPasswordInput], function (req, res) {
         req.models.Member.create({
             login: req.body.login,
             pass: md5(req.body.pass)
