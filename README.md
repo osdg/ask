@@ -21,12 +21,10 @@
 3. 使用XAMPP的PHPMyAdmin将ask.sql导入到数据库中
 4. 安装Redis
 5. 安装Nodejs环境
-6. 进入 code 目录
-7. 执行命令 npm install
-8. 安装 bower
-9. 进入 code/public 目录
-10. 执行 bower install
-11. 执行命令 npm start
-12. 待服务器启动成功后，可使用浏览器访问 http://localhost:3000
+6. 进入 code 目录并执行命令 npm install
+7. 安装 bower
+8. 进入 code/public 目录并执行 bower install
+9. 进入 code 目录并执行命令 npm start
+10. 待服务器启动成功后，可使用浏览器访问 http://localhost:3000
 
 
